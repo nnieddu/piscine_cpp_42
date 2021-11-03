@@ -1,16 +1,28 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ninieddu <ninieddu@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/03 16:14:47 by ninieddu          #+#    #+#              #
+#    Updated: 2021/11/03 16:18:12 by ninieddu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRCS			= Zombie.cpp randomChump.cpp newZombie.cpp main.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
-CXX				= clang++
+CLPP			= clang++
 RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -I.
+CLPPFLAGS		= -Wall -Wextra -Werror
 
 NAME			= Zombie
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				@$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+				@$(CLPP) $(CLPPFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 				@$(RM) $(OBJS)
@@ -21,3 +33,4 @@ fclean:			clean
 re:				fclean $(NAME)
 
 .PHONY:			all clean fclean re
+

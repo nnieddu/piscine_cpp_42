@@ -1,16 +1,28 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ninieddu <ninieddu@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/03 17:42:20 by ninieddu          #+#    #+#              #
+#    Updated: 2021/11/03 17:43:05 by ninieddu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRCS			= HumanA.cpp HumanB.cpp main.cpp Weapon.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
-CXX				= clang++
+CLPP			= clang++
 RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -I.
+CLPPFLAGS		= -Wall -Wextra -Werror
 
-NAME			= Unnecessary
+NAME			= Unnecessary_violence
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				@$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+				@$(CLPP) $(CLPPFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 				@$(RM) $(OBJS)

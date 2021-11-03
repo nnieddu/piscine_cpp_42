@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: ninieddu <ninieddu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:39:17 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/08/31 14:39:18 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/03 16:23:26 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ Zombie::Zombie(std::string name)
 	: name(name)
 {
 	std::cout << "<" << this->name << "> "
-			  << "is Born" << std::endl;
+			  << "is reborn" << std::endl;
 }
 
 Zombie::~Zombie()
 {
 	std::cout << "<" << this->name << "> "
-			  << "is Died" << std::endl;
+			  << "is returned to dust" << std::endl;
 }
 
 void Zombie::announce(void)

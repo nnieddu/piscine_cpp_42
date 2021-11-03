@@ -1,16 +1,16 @@
 SRCS			= Karen.cpp main.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
-CXX				= clang++
+CLPP				= clang++
 RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -I.
+CLPPFLAGS		= -Wall -Wextra -Werror -I.
 
 NAME			= karen
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				@$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+				@$(CLPP) $(CLPPFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 				@$(RM) $(OBJS)
