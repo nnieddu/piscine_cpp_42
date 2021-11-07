@@ -3,33 +3,39 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ninieddu <ninieddu@student.42.fr>          +#+  +:+       +#+         #
+#    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 17:42:20 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/03 17:43:05 by ninieddu         ###   ########.fr        #
+#    Updated: 2021/11/07 23:48:16 by ninieddu         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= HumanA.cpp HumanB.cpp main.cpp Weapon.cpp
-OBJS			= $(SRCS:.cpp=.o)
+NAME	=	Unnecessary_violence
 
-CLPP			= clang++
-RM				= rm -f
-CLPPFLAGS		= -Wall -Wextra -Werror
+COMP 	=	c++
 
-NAME			= Unnecessary_violence
+FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-all:			$(NAME)
+SRC		=	HumanA.cpp HumanB.cpp main.cpp Weapon.cpp
 
-$(NAME):		$(OBJS)
-				@$(CLPP) $(CLPPFLAGS) -o $(NAME) $(OBJS)
+INCS	=	HumanA.hpp HumanB.hpp Weapon.hpp
 
-clean:
-				@$(RM) $(OBJS)
+OBJ		=	$(SRC:.cpp=.o)
 
-fclean:			clean
-				@$(RM) $(NAME)
+%.o : %.cpp $(INCS)
+	$(COMP) $(FLAG) -c $< -o $@
 
-re:				fclean $(NAME)
+all : $(NAME)
 
-.PHONY:			all clean fclean re
+$(NAME) : $(OBJ)
+	$(COMP) $(FLAG) $(OBJ) -o $(NAME)
+
+clean :
+	rm -f $(OBJ)
+
+fclean :
+	rm -f $(NAME) $(OBJ)
+
+re : fclean all
+
+.PHONY : all clean fclean re

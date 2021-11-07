@@ -6,29 +6,29 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/07 14:07:26 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/07 14:14:17 by ninieddu         ###   ########lyon.fr    #
+#    Updated: 2021/11/07 23:46:16 by ninieddu         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		=	ZombieHorde
+NAME 	=	ZombieHorde
 
-CLPP 		=	clang++
+COMP 	=	c++
 
-FLAG		=	-Wall -Wextra -Werror -std=c++98
+FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-SRC			=	main.cpp Zombie.cpp ZombieHorde.cpp
+SRC		=	main.cpp Zombie.cpp ZombieHorde.cpp
 
-INCS		=	Zombie.hpp
+INCS	=	Zombie.hpp
 
-OBJ			=	$(SRC:.cpp=.o)
+OBJ		=	$(SRC:.cpp=.o)
 
 %.o : %.cpp $(INCS)
-	$(CLPP) $(FLAG) -c $< -o $@
+	$(COMP) $(FLAG) -c $< -o $@
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CLPP) $(FLAG) $(OBJ) -o $(NAME)
+	$(COMP) $(FLAG) $(OBJ) -o $(NAME)
 
 clean :
 	rm -f $(OBJ)

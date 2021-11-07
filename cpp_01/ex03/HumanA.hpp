@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:41:23 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/08/31 14:41:39 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/08 00:05:30 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 
 class HumanA
 {
-	public:
+public:
 	HumanA(std::string name, Weapon &weapon);
-	Weapon &weapon;
-	std::string name;
 	void attack();
 	void setWeapon(Weapon &weapon);
+
+private:
+	Weapon &weapon;
+	std::string name;
 };
 
 #endif

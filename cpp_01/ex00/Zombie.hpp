@@ -6,12 +6,12 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:39:21 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/07 11:37:10 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/07 23:55:24 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 #include <iostream>
 

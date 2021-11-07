@@ -1,16 +1,16 @@
 SRCS			= Karen.cpp main.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
-CLPP				= clang++
+COMP				= c++
 RM				= rm -f
-CLPPFLAGS		= -Wall -Wextra -Werror -I.
+COMPFLAGS		= -Wall -Wextra -Werror -I.
 
-NAME			= karenFilter
+NAME		= karenFilter
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				@$(CLPP) $(CLPPFLAGS) -o $(NAME) $(OBJS)
+				@$(COMP) $(COMPFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 				@$(RM) $(OBJS)

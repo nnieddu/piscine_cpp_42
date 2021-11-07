@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:39:17 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/07 14:14:19 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/07 22:25:10 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Zombie::Zombie(std::string name) : _name(name)
 
 Zombie::~Zombie()
 {
-	std::cout << "<" << _name << "> " << "is Died" << std::endl;
+	std::cout << "<" << _name << "> " << "is Dead" << std::endl;
 }
 
 void Zombie::announce(void)

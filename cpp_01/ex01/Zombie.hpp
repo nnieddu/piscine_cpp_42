@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ninieddu <ninieddu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:40:42 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/03 17:31:55 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/07 23:55:19 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,21 @@
 # define ZOMBIE_HPP
 
 #include <iostream>
+#include <stdlib.h>
+#include <sstream>
 
 class Zombie
 {
-private:
-	std::string name;
-	int id;
-
 public:
 	Zombie();
 	~Zombie();
 	void announce();
-	void set_name(std::string name, int i);
+	void setName(std::string name, int i);
+
+private:
+	std::string _name;
 };
 
-Zombie *ZombieHorde(int n, std::string name);
+Zombie *ZombieHorde(int N, std::string name);
 
 #endif
