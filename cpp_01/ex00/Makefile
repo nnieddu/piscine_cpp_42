@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/07 13:48:57 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/07 14:10:51 by ninieddu         ###   ########lyon.fr    #
+#    Created: 2021/11/07 14:14:45 by ninieddu          #+#    #+#              #
+#    Updated: 2021/11/07 14:14:46 by ninieddu         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CLPP 		=	clang++
 
 FLAG		=	-Wall -Wextra -Werror -std=c++98
 
-SRC			=	main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRC			=	Zombie.cpp randomChump.cpp newZombie.cpp main.cpp
 
 INCS		=	Zombie.hpp
 
@@ -31,10 +31,10 @@ $(NAME) : $(OBJ)
 	$(CLPP) $(FLAG) $(OBJ) -o $(NAME)
 
 clean :
-	@rm -f $(OBJ)
+	rm -f $(OBJ)
 
 fclean :
-	@rm -f $(NAME) $(OBJ)
+	rm -f $(NAME) $(OBJ)
 
 re : fclean all
 
