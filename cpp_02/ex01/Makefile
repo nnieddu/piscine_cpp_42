@@ -1,11 +1,11 @@
 SRCS			= Fixed.cpp main.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
-CXX				= clang++
+CXX				= c++
 RM				= rm -f
 CXXFLAGS		= -Wall -Wextra -Werror -I.
 
-NAME			= Fixed
+NAME		= Fixed
 
 all:			$(NAME)
 
