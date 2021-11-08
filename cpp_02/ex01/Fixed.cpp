@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:44:21 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/08/31 14:44:22 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/08 15:47:18 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,10 @@ Fixed::Fixed()
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(float const val)
+Fixed::Fixed(Fixed const &fixed)
 {
-	std::cout << "float constructor called" << std::endl;
-	this->value = roundf(val * (1 << Fixed::bit));
-}
-
-Fixed::Fixed(int const val)
-{
-	std::cout << "int constructor called" << std::endl;
-	this->value = val << Fixed::bit;
+	std::cout << "Copy constructor called" << std::endl;
+	this->value = fixed.getRawBits();
 }
 
 Fixed::~Fixed()
@@ -35,17 +29,23 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &fixed)
-{
-	std::cout << "Copy constructor called" << std::endl;
-	this->value = fixed.getRawBits();
-}
-
 Fixed &Fixed::operator=(Fixed const &fixed)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->value = fixed.getRawBits();
 	return *this;
+}
+
+Fixed::Fixed(float const val)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->value = roundf(val * (1 << Fixed::bit));
+}
+
+Fixed::Fixed(int const val)
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->value = val << Fixed::bit;
 }
 
 std::ostream &operator<<(std::ostream &out, Fixed const &output)

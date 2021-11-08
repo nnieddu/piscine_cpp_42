@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:44:42 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/08/31 14:44:43 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/08 15:47:41 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ Fixed::Fixed(float const val)
 	this->value = roundf(val * (1 << Fixed::bit));
 }
 
+Fixed::Fixed(Fixed const &fixed)
+{
+	this->value = fixed.getRawBits();
+}
+
 Fixed::Fixed(int const val)
 {
 	this->value = val << Fixed::bit;
@@ -29,11 +34,6 @@ Fixed::Fixed(int const val)
 
 Fixed::~Fixed()
 {
-}
-
-Fixed::Fixed(Fixed const &fixed)
-{
-	this->value = fixed.getRawBits();
 }
 
 Fixed &Fixed::operator=(Fixed const &fixed)

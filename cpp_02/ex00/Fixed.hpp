@@ -6,13 +6,15 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:44:06 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/08/31 14:44:06 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/08 15:45:05 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
-#define FIXED_HPP
+# define FIXED_HPP
+
 #include <iostream>
+
 
 class Fixed
 {
@@ -22,8 +24,8 @@ private:
 
 public:
 	Fixed();
-	~Fixed();
 	Fixed(Fixed const &fixed);
+	~Fixed();
 	Fixed &operator=(Fixed const &fixed);
 
 	int getRawBits(void) const;

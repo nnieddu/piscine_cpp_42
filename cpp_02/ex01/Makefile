@@ -1,23 +1,41 @@
-SRCS			= Fixed.cpp main.cpp
-OBJS			= $(SRCS:.cpp=.o)
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/08 15:16:55 by ninieddu          #+#    #+#              #
+#    Updated: 2021/11/08 15:17:11 by ninieddu         ###   ########lyon.fr    #
+#                                                                              #
+# **************************************************************************** #
 
-CXX				= c++
-RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -I.
+NAME	=	Fixed
 
-NAME		= Fixed
+COMP 	=	clang++
 
-all:			$(NAME)
+FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-$(NAME):		$(OBJS)
-				@$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+SRC		=	Fixed.cpp main.cpp
 
-clean:
-				@$(RM) $(OBJS)
+INCS	=	Fixed.hpp
 
-fclean:			clean
-				@$(RM) $(NAME)
+OBJ		=	$(SRC:.cpp=.o)
 
-re:				fclean $(NAME)
+%.o : %.cpp $(INCS)
+	$(COMP) $(FLAG) -c $< -o $@
 
-.PHONY:			all clean fclean re
+all : $(NAME)
+
+$(NAME) : $(OBJ)
+	$(COMP) $(FLAG) $(OBJ) -o $(NAME)
+
+clean :
+	rm -f $(OBJ)
+
+fclean :
+	rm -f $(NAME) $(OBJ)
+
+re : fclean all
+
+.PHONY : all clean fclean re
