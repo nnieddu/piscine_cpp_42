@@ -6,7 +6,7 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/07 23:43:02 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/07 23:45:51 by ninieddu         ###   ########lyon.fr    #
+#    Updated: 2021/11/08 07:56:08 by ninieddu         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ COMP 	=	c++
 FLAG	=	-Wall -Wextra -Werror -std=c++98
 
 SRC		=	main.cpp
+
+INCS	=	
 
 OBJ		=	$(SRC:.cpp=.o)
 
@@ -32,7 +34,7 @@ clean :
 	rm -f $(OBJ)
 
 fclean :
-	rm -f $(NAME) $(OBJ)
+	rm -f $(NAME) $(OBJ) *.replace
 
 re : fclean all
 

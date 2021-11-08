@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:42:58 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/08/31 14:42:59 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/08 10:25:57 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,27 @@ void Karen::error(void)
 	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
-Karen::commentType_ const Karen::commentTypeList_[] =
-{
-	{"DEBUG", &Karen::debug},
-	{"INFO", &Karen::info},
-	{"WARNING", &Karen::warning},
-	{"ERROR", &Karen::error}
-};
-
 void Karen::complain(std::string level)
 {
-	for(int i = 0; i<4; i++)
+	f[0] = &Karen::debug;
+	f[1] = &Karen::info;
+	f[2] = &Karen::warning;
+	f[3] = &Karen::error;
+
+	const char *options[4] = 
 	{
-		if(level == Karen::commentTypeList_[i].name)
-		{
-			return (this->*(commentTypeList_[i].func))();
-		}
-	}
-	std::cout << "Karen cannot create " << level << std::endl;
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR",
+	};
+	int id = 0;
+
+	while (id < 4 && options[id] && level.compare(options[id]))
+		id++;
+	if (id < 4)
+		return (this->*(f[id]))();
+
+	std::cout << "Error : Karen can't complain with :" << level << std::endl;
+	return ;
 }

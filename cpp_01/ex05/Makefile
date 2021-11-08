@@ -1,23 +1,41 @@
-SRCS			= Karen.cpp main.cpp
-OBJS			= $(SRCS:.cpp=.o)
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/08 09:09:56 by ninieddu          #+#    #+#              #
+#    Updated: 2021/11/08 09:34:13 by ninieddu         ###   ########lyon.fr    #
+#                                                                              #
+# **************************************************************************** #
 
-COMP				= c++
-RM				= rm -f
-COMPFLAGS		= -Wall -Wextra -Werror -I.
+NAME	= 	Karen
 
-NAME		= karen
+COMP 	=	c++
 
-all:			$(NAME)
+FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-$(NAME):		$(OBJS)
-				@$(COMP) $(COMPFLAGS) -o $(NAME) $(OBJS)
+SRC		=	Karen.cpp main.cpp
 
-clean:
-				@$(RM) $(OBJS)
+INCS	=	Karen.hpp
 
-fclean:			clean
-				@$(RM) $(NAME)
+OBJ		=	$(SRC:.cpp=.o)
 
-re:				fclean $(NAME)
+%.o : %.cpp $(INCS)
+	$(COMP) $(FLAG) -c $< -o $@
 
-.PHONY:			all clean fclean re
+all : $(NAME)
+
+$(NAME) : $(OBJ)
+	$(COMP) $(FLAG) $(OBJ) -o $(NAME)
+
+clean :
+	rm -f $(OBJ)
+
+fclean :
+	rm -f $(NAME) $(OBJ)
+
+re : fclean all
+
+.PHONY : all clean fclean re

@@ -6,51 +6,22 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:43:25 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/08/31 14:43:26 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/08 10:39:50 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 #include <string>
 
-level levelType(std::string const &type)
+int main(int ac, char **av)
 {
-	if (type == "DEBUG")
-		return debug;
-	if (type == "INFO")
-		return info;
-	if (type == "WARNING")
-		return warning;
-	if (type == "ERROR")
-		return error;
-	return notImportant;
-}
+    Karen   karenFiltered;
 
-int main(int argc, char *argv[])
-{
-	Karen karen;
-	if (argc != 2)
-	{
-		std::cout << "Not enough" << std::endl;
-		return 1;
-	}
-	else
-	{
-		switch (levelType(argv[1]))
-		{
-		case debug:
-			karen.complain("DEBUG");
-		case info:
-			karen.complain("INFO");
-		case warning:
-			karen.complain("WARNING");
-		case error:
-			karen.complain("ERROR");
-			break;
-		default:
-			std::cout << "Probably complaining about insignificant problems" << std::endl;
-			break;
-		}
-	}
+    if (ac != 2)
+    {
+        std::cout << "Error : need just one string argument" << std::endl;
+        return (1);
+    }
+	karenFiltered.complain(av[1]);
 	return (0);
 }

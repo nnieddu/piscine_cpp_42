@@ -6,7 +6,7 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 17:36:17 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/07 23:46:27 by ninieddu         ###   ########lyon.fr    #
+#    Updated: 2021/11/08 07:43:17 by ninieddu         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FLAG	=	-Wall -Wextra -Werror -std=c++98
 
 SRC		=	main.cpp
 
-INCS	=	Zombie.hpp
+INCS	=	
 
 OBJ		=	$(SRC:.cpp=.o)
 
