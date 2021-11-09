@@ -6,22 +6,24 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:44:21 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/08 15:47:18 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 14:00:59 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+const int Fixed::_bits;
+
 Fixed::Fixed()
 {
-	this->value = 0;
+	_value = 0;
 	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const &fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->value = fixed.getRawBits();
+	_value = fixed.getRawBits();
 }
 
 Fixed::~Fixed()
@@ -32,46 +34,46 @@ Fixed::~Fixed()
 Fixed &Fixed::operator=(Fixed const &fixed)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	this->value = fixed.getRawBits();
-	return *this;
+	_value = fixed.getRawBits();
+	return (*this);
 }
 
 Fixed::Fixed(float const val)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->value = roundf(val * (1 << Fixed::bit));
+	_value = roundf(val * (1 << _bits));
 }
 
 Fixed::Fixed(int const val)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->value = val << Fixed::bit;
-}
-
-std::ostream &operator<<(std::ostream &out, Fixed const &output)
-{
-	out << output.toFloat();
-	return out;
+	_value = val << _bits;
 }
 
 float Fixed::toFloat(void) const
 {
-	return (float)this->value / (float)(1 << Fixed::bit);
+	return (float)_value / (float)(1 << _bits);
 }
 
 int Fixed::toInt(void) const
 {
-	return this->value >> Fixed::bit;
+	return (_value >> _bits);
 }
 
 int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return this->value;
+	return (_value);
 }
 
 void Fixed::setRawbits(int const raw)
 {
-	this->value = raw;
+	_value = raw;
 	std::cout << "setRawBits member function called" << std::endl;
+}
+
+std::ostream &operator<<(std::ostream &out, Fixed const &output)
+{
+	out << output.toFloat();
+	return (out);
 }

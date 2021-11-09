@@ -6,30 +6,32 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:44:42 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/08 15:47:41 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 13:57:40 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+const int Fixed::_bits;
+
 Fixed::Fixed()
 {
-	this->value = 0;
+	_value = 0;
 }
 
 Fixed::Fixed(float const val)
 {
-	this->value = roundf(val * (1 << Fixed::bit));
+	_value = roundf(val * (1 << _bits));
 }
 
 Fixed::Fixed(Fixed const &fixed)
 {
-	this->value = fixed.getRawBits();
+	_value = fixed.getRawBits();
 }
 
 Fixed::Fixed(int const val)
 {
-	this->value = val << Fixed::bit;
+	_value = val << _bits;
 }
 
 Fixed::~Fixed()
@@ -38,146 +40,146 @@ Fixed::~Fixed()
 
 Fixed &Fixed::operator=(Fixed const &fixed)
 {
-	this->value = fixed.getRawBits();
-	return *this;
+	_value = fixed.getRawBits();
+	return (*this);
 }
 
 std::ostream &operator<<(std::ostream &out, Fixed const &output)
 {
 	out << output.toFloat();
-	return out;
+	return (out);
 }
 
 Fixed &Fixed::operator+(const Fixed &value)
 {
-	this->value += value.value;
-	return *this;
+	_value += value._value;
+	return (*this);
 }
 
 Fixed &Fixed::operator-(const Fixed &value)
 {
-	this->value -= value.value;
-	return *this;
+	_value -= value._value;
+	return (*this);
 }
 
 Fixed &Fixed::operator*(const Fixed &value)
 {
-	this->value *= (value.value / (1 << value.bit));
-	return *this;
+	_value *= (value._value / (1 << value._bits));
+	return (*this);
 }
 
 Fixed &Fixed::operator/(const Fixed &value)
 {
-	this->value /= (value.value * (1 << value.bit));
-	return *this;
+	_value /= (value._value * (1 << value._bits));
+	return (*this);
 }
 
 bool Fixed::operator>(const Fixed &value)
 {
-	return (this->value > value.value);
+	return (_value > value._value);
 }
 
 bool Fixed::operator<(const Fixed &value)
 {
-	return (this->value < value.value);
+	return (_value < value._value);
 }
 
 bool Fixed::operator<=(const Fixed &value)
 {
-	return (this->value <= value.value);
+	return (_value <= value._value);
 }
 
 bool Fixed::operator>=(const Fixed &value)
 {
-	return (this->value >= value.value);
+	return (_value >= value._value);
 }
 
 bool Fixed::operator==(const Fixed &value)
 {
-	return (this->value == value.value);
+	return (_value == value._value);
 }
 
 bool Fixed::operator!=(const Fixed &value)
 {
-	return (this->value != value.value);
+	return (_value != value._value);
 }
 
 Fixed &Fixed::operator++()
 {
-	this->value += 1;
-	return *this;
+	_value += 1;
+	return (*this);
 }
 
 Fixed Fixed::operator++(int)
 {
 	Fixed temp = *this;
 	++*this;
-	return temp;
+	return (temp);
 }
 
 Fixed &Fixed::operator--()
 {
-	this->value -= 1;
-	return *this;
+	_value -= 1;
+	return (*this);
 }
 
 Fixed Fixed::operator--(int)
 {
 	Fixed temp = *this;
 	--*this;
-	return temp;
+	return (temp);
 }
 
 Fixed Fixed::max(Fixed &a, Fixed &b)
 {
 	if (a < b)
-		return b;
+		return (b);
 	else
-		return a;
+		return (a);
 }
 
 Fixed Fixed::min(Fixed &a, Fixed &b)
 {
 	if (a > b)
-		return b;
+		return (b);
 	else
-		return a;
+		return (a);
 }
 
 Fixed const Fixed::max(const Fixed &a, const Fixed &b)
 {
 	Fixed temp(a);
 	if (temp < b)
-		return b;
+		return (b);
 	else
-		return a;
+		return (a);
 }
 
 Fixed const Fixed::min(const Fixed &a, const Fixed &b)
 {
 	Fixed temp(a);
 	if (temp > b)
-		return b;
+		return (b);
 	else
-		return a;
+		return (a);
 }
 
 float Fixed::toFloat(void) const
 {
-	return (float)this->value / (float)(1 << Fixed::bit);
+	return ((float)_value / (float)(1 << _bits));
 }
 
 int Fixed::toInt(void) const
 {
-	return this->value >> Fixed::bit;
+	return (_value >> _bits);
 }
 
 int Fixed::getRawBits(void) const
 {
-	return this->value;
+	return (_value);
 }
 
 void Fixed::setRawbits(int const raw)
 {
-	this->value = raw;
+	_value = raw;
 }
