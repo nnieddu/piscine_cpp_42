@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:44:26 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/09 13:52:29 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 14:41:32 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FIXED_HPP
 
 #include <iostream>
-#include <cmath>
 
 class Fixed
 {

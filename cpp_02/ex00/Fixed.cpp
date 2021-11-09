@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:44:01 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/09 13:20:01 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 14:43:22 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ Fixed &Fixed::operator=(Fixed const &fixed)
 int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return _value;
+	return (_value);
 }
 
 void Fixed::setRawbits(int const raw)
 {
-	_value = raw;
 	std::cout << "setRawBits member function called" << std::endl;
+	_value = raw;
 }

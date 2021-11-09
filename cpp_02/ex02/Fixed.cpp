@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:44:42 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/09 13:57:40 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 15:00:32 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ Fixed::Fixed()
 	_value = 0;
 }
 
-Fixed::Fixed(float const val)
-{
-	_value = roundf(val * (1 << _bits));
-}
-
 Fixed::Fixed(Fixed const &fixed)
 {
 	_value = fixed.getRawBits();
@@ -32,6 +27,11 @@ Fixed::Fixed(Fixed const &fixed)
 Fixed::Fixed(int const val)
 {
 	_value = val << _bits;
+}
+
+Fixed::Fixed(float const val)
+{
+	_value = roundf(val * (1 << _bits));
 }
 
 Fixed::~Fixed()
@@ -48,6 +48,26 @@ std::ostream &operator<<(std::ostream &out, Fixed const &output)
 {
 	out << output.toFloat();
 	return (out);
+}
+
+float Fixed::toFloat(void) const
+{
+	return ((float)_value / (1 << _bits));
+}
+
+int Fixed::toInt(void) const
+{
+	return (_value >> _bits);
+}
+
+int Fixed::getRawBits(void) const
+{
+	return (_value);
+}
+
+void Fixed::setRawbits(int const raw)
+{
+	_value = raw;
 }
 
 Fixed &Fixed::operator+(const Fixed &value)
@@ -162,24 +182,4 @@ Fixed const Fixed::min(const Fixed &a, const Fixed &b)
 		return (b);
 	else
 		return (a);
-}
-
-float Fixed::toFloat(void) const
-{
-	return ((float)_value / (float)(1 << _bits));
-}
-
-int Fixed::toInt(void) const
-{
-	return (_value >> _bits);
-}
-
-int Fixed::getRawBits(void) const
-{
-	return (_value);
-}
-
-void Fixed::setRawbits(int const raw)
-{
-	_value = raw;
 }
