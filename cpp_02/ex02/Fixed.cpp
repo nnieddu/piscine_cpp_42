@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:44:42 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/09 15:00:32 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 18:59:51 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed::Fixed(int const val)
 
 Fixed::Fixed(float const val)
 {
-	_value = roundf(val * (1 << _bits));
+	_value = (val * (1 << _bits) + 1);
 }
 
 Fixed::~Fixed()
@@ -44,9 +44,14 @@ Fixed &Fixed::operator=(Fixed const &fixed)
 	return (*this);
 }
 
-std::ostream &operator<<(std::ostream &out, Fixed const &output)
+float Fixed::getFloatValue(void) const
 {
-	out << output.toFloat();
+	return ((float)_value / (1 << _bits));
+}
+
+std::ostream &operator<<(std::ostream &out, Fixed const &fixed)
+{
+	out << fixed.getFloatValue();
 	return (out);
 }
 
@@ -132,9 +137,7 @@ Fixed &Fixed::operator++()
 
 Fixed Fixed::operator++(int)
 {
-	Fixed temp = *this;
-	++*this;
-	return (temp);
+	return (++*this);
 }
 
 Fixed &Fixed::operator--()
@@ -145,9 +148,7 @@ Fixed &Fixed::operator--()
 
 Fixed Fixed::operator--(int)
 {
-	Fixed temp = *this;
-	--*this;
-	return (temp);
+	return (--*this);
 }
 
 Fixed Fixed::max(Fixed &a, Fixed &b)

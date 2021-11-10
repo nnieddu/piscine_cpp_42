@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:44:21 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/09 14:43:27 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 16:37:59 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Fixed::Fixed(int const val)
 
 float Fixed::toFloat(void) const
 {
-	return (float)_value / (float)(1 << _bits);
+	return (float)_value / (1 << _bits);
 }
 
 int Fixed::toInt(void) const
