@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:44:42 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/10 19:00:41 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 19:00:53 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,7 +179,6 @@ Fixed const Fixed::max(const Fixed &a, const Fixed &b)
 Fixed const Fixed::min(const Fixed &a, const Fixed &b)
 {
 	Fixed temp(a);
-
 	if (temp > b)
 		return (b);
 	else
