@@ -1,23 +1,41 @@
-SRCS			= ClapTrap.cpp main.cpp
-OBJS			= $(SRCS:.cpp=.o)
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/10 17:01:27 by ninieddu          #+#    #+#              #
+#    Updated: 2021/11/10 17:01:27 by ninieddu         ###   ########lyon.fr    #
+#                                                                              #
+# **************************************************************************** #
 
-CXX				= c++
-RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -I.
+NAME	=	ClapTrap
 
-NAME		= ClapTrap
+COMP 	=	c++
 
-all:			$(NAME)
+FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-$(NAME):		$(OBJS)
-				@$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+SRC		=	ClapTrap.cpp main.cpp
 
-clean:
-				@$(RM) $(OBJS)
+INCS	=	ClapTrap.hpp
 
-fclean:			clean
-				@$(RM) $(NAME)
+OBJ		=	$(SRC:.cpp=.o)
 
-re:				fclean $(NAME)
+%.o : %.cpp $(INCS)
+	$(COMP) $(FLAG) -c $< -o $@
 
-.PHONY:			all clean fclean re
+all : $(NAME)
+
+$(NAME) : $(OBJ)
+	$(COMP) $(FLAG) $(OBJ) -o $(NAME)
+
+clean :
+	rm -f $(OBJ)
+
+fclean :
+	rm -f $(NAME) $(OBJ)
+
+re : fclean all
+
+.PHONY : all clean fclean re

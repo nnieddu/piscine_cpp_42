@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 14:47:40 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/08/31 14:47:40 by ninieddu         ###   ########lyon.fr   */
+/*   Created: 2021/08/31 14:46:56 by ninieddu          #+#    #+#             */
+/*   Updated: 2021/11/16 18:56:35 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,22 @@
 class ClapTrap
 {
 protected:
-	std::string name;
-	unsigned int HitPoint;
-	unsigned int EnergyPoint;
-	unsigned int AttackDamage;
+	std::string _name;
+	unsigned int _HitPoints;
+	unsigned int _EnergyPoints;
+	unsigned int _AttackDamage;
+
 public:
 	ClapTrap();
 	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap &copy);
 	~ClapTrap();
-	ClapTrap(const ClapTrap& copy);
-	ClapTrap& operator=(const ClapTrap& copy);
-	void attack(const std::string &target);
+
+ 	unsigned int const &getHP() const;
+	
+	ClapTrap& operator=(const ClapTrap &copy);
+
+	void attack(std::string const & target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 };

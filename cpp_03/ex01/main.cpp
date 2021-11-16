@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:46:25 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/08/31 14:46:26 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/16 19:35:14 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int main()
 {
-	ScavTrap scav("scav");
+	ScavTrap scav("Scav");
 
-	scav.GuardGate();
-	scav.attack("bkwag");
+	scav.guardGate();
+	scav.attack("BadBoy");
 	scav.beRepaired(10);
 	scav.takeDamage(10);
+
 	return 0;
 }
