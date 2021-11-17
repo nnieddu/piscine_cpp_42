@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:47:47 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/16 20:07:12 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 15:13:06 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,22 @@
 class DiamondTrap : public FragTrap, public ScavTrap
 {
 private:
-	std::string name;
+	std::string _name;
+
 public:
 	DiamondTrap();
-	// DiamondTrap(std::string name);
-	// DiamondTrap(const DiamondTrap& copy);
-	~DiamondTrap();
+	DiamondTrap(std::string name);
+	DiamondTrap(const DiamondTrap& copy);
+	virtual ~DiamondTrap();
 
-	// DiamondTrap& operator=(const DiamondTrap& copy);
+	DiamondTrap& operator=(const DiamondTrap& copy);
 
-	void attack(const std::string & target);
 	void whoAmI();
+	void attack(std::string const & target);
+	virtual void guardGate();
+	virtual void highFivesGuys(void);
+	virtual void takeDamage(unsigned int amount);
+	virtual void beRepaired(unsigned int amount);	
 };
 
 #endif

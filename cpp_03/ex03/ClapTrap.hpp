@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:46:56 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/16 18:56:35 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 15:13:22 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ public:
 	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &copy);
-	~ClapTrap();
+	virtual ~ClapTrap();
 
  	unsigned int const &getHP() const;
 	
 	ClapTrap& operator=(const ClapTrap &copy);
 
-	void attack(std::string const & target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+	virtual void attack(std::string const & target);
+	virtual void takeDamage(unsigned int amount);
+	virtual void beRepaired(unsigned int amount);
 };
 
 #endif
