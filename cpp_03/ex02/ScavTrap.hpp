@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:47:26 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/16 18:56:28 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 16:24:22 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class ScavTrap: public ClapTrap
 public:
 	ScavTrap();
 	ScavTrap(std::string name);
+	ScavTrap(const ScavTrap& copy);
 	~ScavTrap();
 
 	ScavTrap& operator=(const ScavTrap &copy);

@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:45:54 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/16 18:30:48 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 16:18:20 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default constructor called." << std::endl;
+	std::cout << "ClapTrap Default constructor called." << std::endl;
 	_name = "Default_Claptrap";
 	_HitPoints = 10;
 	_EnergyPoints = 10;
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name) : _name(name)
 {
-	std::cout << "Default constructor with name called." << std::endl;
+	std::cout << "ClapTrap Default constructor with name called." << std::endl;
 	_HitPoints = 10;
 	_EnergyPoints = 10;
 	_AttackDamage = 0;
@@ -31,13 +31,13 @@ ClapTrap::ClapTrap(std::string name) : _name(name)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called." << std::endl;
+	std::cout << "ClapTrap Destructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy) : _name(copy._name), _HitPoints(copy._HitPoints),
 _EnergyPoints(copy._EnergyPoints), _AttackDamage(copy._AttackDamage)
 {
-	std::cout << "Copy constructor called." << std::endl;
+	std::cout << "ClapTrap Copy constructor called." << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& copy)
@@ -73,7 +73,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	_HitPoints += amount;
-	std::cout << _name << " has been repaired and gain " << amount << " HP !" << std::endl;
+	std::cout << _name << " been repaired and gain " << amount << " HP !" << std::endl;
 }
 
  unsigned int const &ClapTrap::getHP() const

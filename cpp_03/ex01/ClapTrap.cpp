@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:45:54 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/16 19:50:03 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 16:18:12 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	_HitPoints += amount;
-	std::cout << _name << " has been repaired and gain " << amount << " HP !" << std::endl;
+	std::cout << _name << " been repaired and gain " << amount << " HP !" << std::endl;
 }
 
  unsigned int const &ClapTrap::getHP() const

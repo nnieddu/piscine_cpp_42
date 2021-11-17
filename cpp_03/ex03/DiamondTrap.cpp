@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:47:44 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/17 15:17:51 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 16:32:45 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), Sca
 	_EnergyPoints = ScavTrap::_EnergyPoints;
 	_AttackDamage = FragTrap::_AttackDamage;
 	ClapTrap::_name = name + "_clap_name";
+	ScavTrap::_name = name + "_scav";
 }
 
 DiamondTrap::~DiamondTrap()

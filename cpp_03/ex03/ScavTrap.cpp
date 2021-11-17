@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:47:20 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/17 14:28:38 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 16:28:14 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap Destructor called." << std::endl;
 }
 
-void    ScavTrap::guardGate()
+void ScavTrap::guardGate()
 {
     std::cout << _name << " enter in Gate keeper mode." << std::endl;
 }

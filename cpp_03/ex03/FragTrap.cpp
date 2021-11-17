@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:47:01 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/17 15:10:23 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 16:33:43 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,5 @@ FragTrap& FragTrap::operator=(const FragTrap& copy)
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << _name << " Ask : High-five ? :)" << std::endl;
+	std::cout << _name << " ask : High-five ? :)" << std::endl;
 }

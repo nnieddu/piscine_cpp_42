@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:47:20 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/16 19:37:28 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 16:25:23 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
     _EnergyPoints = 50;
     _AttackDamage = 20;
 };
+
+ScavTrap::ScavTrap(const ScavTrap& copy):ClapTrap(copy._name)
+{
+	_name = copy._name;
+	_HitPoints = copy._HitPoints;
+	_EnergyPoints = copy._EnergyPoints;
+	_AttackDamage = copy._AttackDamage;
+}
 
 ScavTrap::~ScavTrap()
 {
