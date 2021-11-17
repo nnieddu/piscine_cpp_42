@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:46:56 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/17 17:28:06 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 17:49:59 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 	
 	ClapTrap& operator=(const ClapTrap &copy);
 
-	virtual void attack(std::string const & target);
+	void attack(std::string const & target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 };
