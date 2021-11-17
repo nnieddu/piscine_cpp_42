@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:47:44 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/17 15:12:57 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 15:17:51 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), Sca
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "Destructor DiamondTrap" << std::endl;
+	std::cout << "DiamondTrap Destructor called." << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &copy)
