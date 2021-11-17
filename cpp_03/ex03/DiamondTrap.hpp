@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:47:47 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/17 16:31:35 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 17:26:59 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,12 @@ public:
 	DiamondTrap();
 	DiamondTrap(std::string name);
 	DiamondTrap(const DiamondTrap& copy);
-	virtual ~DiamondTrap();
+	~DiamondTrap();
 
 	DiamondTrap& operator=(const DiamondTrap& copy);
 
 	void whoAmI();
 	void attack(std::string const & target);
-	virtual void guardGate();
-	virtual void highFivesGuys(void);
-	virtual void takeDamage(unsigned int amount);
-	virtual void beRepaired(unsigned int amount);	
 };
 
 #endif

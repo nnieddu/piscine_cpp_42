@@ -6,7 +6,7 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/10 17:01:27 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/17 14:24:00 by ninieddu         ###   ########lyon.fr    #
+#    Updated: 2021/11/17 17:05:25 by ninieddu         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	ClapTrap
 
 COMP 	=	c++
 
-FLAG	=	-Wall -Wextra -Werror  -Wshadow -Wno-shadow -std=c++98
+FLAG	=	-Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
 
 SRC		=	ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp main.cpp
 
