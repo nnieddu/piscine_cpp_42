@@ -6,7 +6,7 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/10 17:01:27 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/10 17:29:44 by ninieddu         ###   ########lyon.fr    #
+#    Updated: 2021/11/18 15:59:15 by ninieddu         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FLAG	=	-Wall -Wextra -Werror -std=c++98
 
 SRC		=	ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp
 
-INCS	=	ClapTrap.hpp ScavTrap.hpp ClapTrap.hpp
+INCS	=	ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
