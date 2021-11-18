@@ -27,7 +27,7 @@ public:
 	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &copy);
-	virtual ~ClapTrap();
+	~ClapTrap();
 
  	unsigned int const &getHP() const;
 	

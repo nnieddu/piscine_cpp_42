@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:47:26 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/17 15:11:42 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/18 11:42:29 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@ class ScavTrap: virtual public ClapTrap
 public:
 	ScavTrap();
 	ScavTrap(std::string name);
-	virtual ~ScavTrap();
+	ScavTrap(const ScavTrap& copy);
+	~ScavTrap();
 
 	ScavTrap& operator=(const ScavTrap &copy);
 	
-	virtual void guardGate();
+	void guardGate();
 };
 
 #endif

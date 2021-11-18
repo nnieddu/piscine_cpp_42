@@ -21,10 +21,10 @@ public:
 	FragTrap();
 	FragTrap(std::string name);
 	FragTrap(const FragTrap& copy);
-	virtual ~FragTrap();
+	~FragTrap();
 
 	FragTrap& operator=(const FragTrap& copy);
-	virtual void highFivesGuys(void);
+	void highFivesGuys(void);
 };
 
 #endif
