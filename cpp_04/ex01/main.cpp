@@ -5,40 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:30:48 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/10/28 13:31:53 by ninieddu         ###   ########.fr       */
+/*   Created: 2021/10/05 13:05:18 by ninieddu          #+#    #+#             */
+/*   Updated: 2021/10/28 15:12:14 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Brain.hpp"
 #include "Animal.hpp"
-#include "Cat.hpp"
 #include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {
-    const Animal* meta = new Animal();
-    
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    
-    j->makeSound();
-    i->makeSound(); //will output the cat sound!
-    meta->makeSound();
-    
-    
-    delete i;
-    delete j;
-    delete meta;
-    
-    std::cout << std::endl;
-    const WrongAnimal* beta = new WrongAnimal();
-    const WrongAnimal* cat = new WrongCat();
+    const Animal *tab[100];
 
-    beta->makeSound();
-    cat->makeSound();
+	for (int i = 0; i <= 99; i++)
+	{
+		if (i % 2)
+			tab[i] = new Dog;
+		else
+			tab[i] = new Cat;
+	}
+	for (int j = 0; j <= 99; j++)
+	{
+		delete tab[j];
+	}
+
+	std::cout << "\n=============Construction Dog============" << std::endl;
+
+	Dog chien;
     
+	std::cout << "\n=============Construction Copy Dog============" << std::endl;
+	{
+		Dog tmp = chien;
+	}
+    std::cout << "\n" << std::endl;
     return (0);
 }

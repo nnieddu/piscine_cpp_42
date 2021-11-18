@@ -6,19 +6,19 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/04 17:27:26 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/18 11:41:39 by ninieddu         ###   ########lyon.fr    #
+#    Updated: 2021/10/28 15:27:55 by ninieddu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Polymorphism
+NAME	=	AbstractClass
 
 COMP 	=	c++
 
 FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-SRC		=	Animal.cpp Dog.cpp Cat.cpp main.cpp
+SRC		=	Animal.cpp Dog.cpp Cat.cpp Brain.cpp main.cpp
 
-INCS	=	Animal.hpp Dog.hpp Cat.hpp
+INCS	=	Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 
 OBJ		=	$(SRC:.cpp=.o)
 

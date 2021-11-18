@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:23:37 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/10/27 18:05:42 by ninieddu         ###   ########.fr       */
+/*   Created: 2021/10/04 17:28:55 by ninieddu          #+#    #+#             */
+/*   Updated: 2021/11/18 11:41:25 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-#include <iostream>
+#include "Animal.hpp"
 
-class Animal
+class Cat: virtual public Animal
 {
-    protected:
-        std::string _type;
-
     public:
-        Animal();
-        Animal( std::string );
-        Animal( Animal const &);
-        virtual ~Animal();
-        virtual void makeSound() const;
+        Cat();
+        Cat(Cat const &copy);
+        virtual ~Cat();
         virtual std::string getType() const;
+        virtual void makeSound() const;
 
-        Animal & operator=(Animal const &);
+        Cat & operator=(Cat const &);
 };
 
-class WrongAnimal
+class WrongCat : virtual public WrongAnimal
 {
-    protected:
-
     public:
-        WrongAnimal();
-        virtual ~WrongAnimal();
+        WrongCat();
+        virtual ~WrongCat();
         void makeSound() const;
 };
 

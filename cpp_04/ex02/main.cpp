@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 17:30:48 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/10/28 13:31:53 by ninieddu         ###   ########.fr       */
+/*   Created: 2021/10/05 13:05:18 by ninieddu          #+#    #+#             */
+/*   Updated: 2021/10/28 15:36:20 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,21 @@
 
 int main()
 {
-    const Animal* meta = new Animal();
+    Animal* i = new Cat();
+    Animal* j = new Dog();
+
+    //Animal* k = new Animal();
     
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    
+    i->makeSound();
     j->makeSound();
-    i->makeSound(); //will output the cat sound!
-    meta->makeSound();
-    
     
     delete i;
     delete j;
-    delete meta;
     
     std::cout << std::endl;
-    const WrongAnimal* beta = new WrongAnimal();
-    const WrongAnimal* cat = new WrongCat();
-
-    beta->makeSound();
-    cat->makeSound();
-    
+    Dog chien;
+	{
+		Dog tmp = chien;
+	}
     return (0);
 }

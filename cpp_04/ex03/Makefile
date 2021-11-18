@@ -5,20 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/04 17:27:26 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/18 11:41:39 by ninieddu         ###   ########lyon.fr    #
+#    Created: 2021/10/28 17:14:48 by ninieddu          #+#    #+#              #
+#    Updated: 2021/10/28 17:17:18 by ninieddu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Polymorphism
+NAME	=	Interface&recap
 
 COMP 	=	c++
 
 FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-SRC		=	Animal.cpp Dog.cpp Cat.cpp main.cpp
+SRC		=	AMateriaClass.cpp CharacterClass.cpp CureClass.cpp IceClass.cpp MateriaSourceClass.cpp main.cpp
 
-INCS	=	Animal.hpp Dog.hpp Cat.hpp
+INCS	=	AMateriaClass.hpp CharacterClass.hpp ICharacterClass.hpp CureClass.hpp IceClass.hpp MateriaSourceClass.hpp IMateriaSourceClass.hpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
