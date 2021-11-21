@@ -6,11 +6,11 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/21 04:05:09 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/21 11:26:16 by ninieddu         ###   ########.fr        #
+#    Updated: 2021/11/21 11:33:35 by ninieddu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Interface
+NAME	=	AbstractClass
 
 COMP 	=	c++
 

@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 07:47:53 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/21 08:30:40 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/21 16:50:42 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	main()
 	const WrongAnimal *wrong = new WrongCat();
 
 	std::cout << std::endl;
-	std::cout << "Dog type      : " << dog->getType() << " " << std::endl;
-	std::cout << "Cat type      : " << cat->getType() << " " << std::endl;
-	std::cout << "WrongCat type : " << wrong->getType() << " " << std::endl;
+	std::cout << dog->getType() << " " << std::endl;
+	std::cout << cat->getType() << " " << std::endl;
+	std::cout << wrong->getType() << " " << std::endl;
 	
 	std::cout << std::endl;
 	cat->makeSound();

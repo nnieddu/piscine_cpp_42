@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 07:33:55 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/21 08:30:08 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/21 09:45:55 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ Dog &Dog::operator=(const Dog &src)
 
 void Dog::makeSound() const 
 {
-	std::cout << "WafWaf" << std::endl;
+	std::cout << "WaffWaff" << std::endl;
 }

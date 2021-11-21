@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 04:05:23 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/21 08:08:01 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/21 10:53:01 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Animal &Animal::operator=(const Animal &src)
 
 const std::string &Animal::getType() const 
 {
-	return type;
+	return (type);
 }
 
 void Animal::makeSound() const 

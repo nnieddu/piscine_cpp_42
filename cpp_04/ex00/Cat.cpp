@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 04:12:05 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/21 08:30:19 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/21 10:52:09 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 Cat::Cat() : Animal() 
 {
-	type = "Cat";
 	std::cout << "Cat default constructor" << std::endl;
+	type = "Cat";
 }
 
 Cat::Cat(const Cat &src) : Animal() 
 {
-	type = src.type;
 	std::cout << "Cat copy constructor" << std::endl;
+	type = src.type;
 }
 
 Cat::~Cat() 
