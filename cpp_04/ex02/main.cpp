@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 10:19:13 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/21 11:29:20 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/21 11:30:18 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main()
 {
 	const Animal *dog = new Dog();
 	const Animal *cat = new Cat();
+	// const Animal *ani = new Animal();
 	
 	std::cout << std::endl;
 	dog->makeSound();
