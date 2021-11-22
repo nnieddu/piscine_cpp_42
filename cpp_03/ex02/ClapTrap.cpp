@@ -6,12 +6,11 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 14:46:51 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/17 16:19:55 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 18:32:06 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-
 
 ClapTrap::ClapTrap()
 {
