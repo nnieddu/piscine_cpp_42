@@ -6,19 +6,19 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 07:33:55 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 13:15:05 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/22 14:14:54 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal() , _brain(new Brain()) 
+Dog::Dog() : AAnimal() , _brain(new Brain()) 
 {
 	std::cout << "Dog default constructor" << std::endl;
 	type = "Dog";
 }
 
-Dog::Dog(const Dog &src) : Animal() 
+Dog::Dog(const Dog &src) : AAnimal() 
 {
 	std::cout << "Dog copy constructor" << std::endl;
 	type = src.type;

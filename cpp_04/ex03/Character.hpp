@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 12:41:23 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 05:03:27 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/22 14:37:01 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Character : public ICharacter
 {
 	private:
 		AMateria	*_inventory[INVENTORY_SIZE];
-		int			_selection;
+		int			_index;
 		std::string	_name;
 	public:
 		Character(const std::string &name);

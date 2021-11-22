@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 10:19:13 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 13:42:57 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/22 14:10:33 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,8 @@ int     main()
 		delete animals[i];
 	
 	std::cout << std::endl;
-	Dog *dogo = new Dog();
-	Dog *deepc (dogo);
-	delete dogo;
-	(void)deepc;
+	Dog dogo;
+	Dog deepc (dogo);
 	std::cout << std::endl;
 
 	return (0);

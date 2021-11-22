@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:55:49 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 04:35:01 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/22 14:16:09 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ const std::string &AMateria::getType() const
 
 void AMateria::use(ICharacter &target)
 { 
-	target;
+	(void)target;
 }

@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 04:14:32 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 12:34:23 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/22 14:14:33 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal 
+class Cat : public AAnimal 
 {
     private:
         Brain *_brain;	

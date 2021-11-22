@@ -6,19 +6,19 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 04:12:05 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 12:35:37 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/22 14:14:22 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal() , _brain(new Brain()) 
+Cat::Cat() : AAnimal() , _brain(new Brain()) 
 {
 	std::cout << "Cat default constructor" << std::endl;
 	type = "Cat";
 }
 
-Cat::Cat(const Cat &src) : Animal() 
+Cat::Cat(const Cat &src) : AAnimal() 
 {
 	std::cout << "Cat copy constructor" << std::endl;
 	type = src.type;

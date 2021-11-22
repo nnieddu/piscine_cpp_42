@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 03:54:34 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 05:03:27 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/22 14:55:46 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 class MateriaSource : public IMateriaSource 
 {
 	private:
-		AMateria	*book[MAX_SIZE];
-		int			_selection;
+		AMateria	*_book[MAX_SIZE];
+		int			_index;
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource &src);
