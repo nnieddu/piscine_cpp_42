@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:55:49 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/21 17:03:03 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/22 04:35:01 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ AMateria::AMateria(const AMateria &src)
 
 AMateria::~AMateria() 
 {
-};
+}
 
 AMateria &AMateria::operator=(const AMateria &src) 
 {
@@ -40,5 +40,5 @@ const std::string &AMateria::getType() const
 
 void AMateria::use(ICharacter &target)
 { 
-	(void)target;
+	target;
 }

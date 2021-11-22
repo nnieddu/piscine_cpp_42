@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 15:55:53 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 04:29:08 by ninieddu         ###   ########.fr       */
+/*   Created: 2021/11/21 12:41:23 by ninieddu          #+#    #+#             */
+/*   Updated: 2021/11/22 05:03:27 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMateria_HPP
-#define AMateria_HPP
+#ifndef Character_HPP
+#define Character_HPP
 
-#include <string>
-#include <iostream>
 #include "ICharacter.hpp"
 
-class ICharacter;
-
-class AMateria
+class Character : public ICharacter 
 {
-	protected:
-		std::string type;
+	private:
+		AMateria	*_inventory[INVENTORY_SIZE];
+		int			_selection;
+		std::string	_name;
 	public:
-		AMateria(std::string const & type);
+		Character(const std::string &name);
+		virtual ~Character();
+		Character(const Character &src);
+		Character &operator=(const Character &src);
 
-		AMateria(const AMateria &rhs);
-		virtual ~AMateria();
-		AMateria &operator=(const AMateria &rhs);
+		std::string const & getName() const;
 
-		std::string const & getType() const; //Returns the materia type
-		
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
 };
 
 #endif

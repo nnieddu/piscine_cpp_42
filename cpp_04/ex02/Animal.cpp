@@ -6,29 +6,29 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 04:05:23 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/21 11:26:51 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/22 04:00:48 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() : type("Animal")
+AAnimal::Animal() : type("Animal")
 { 
 	std::cout << "Animal default constructor" << std::endl;
 }
 
-Animal::Animal(const Animal &src) 
+AAnimal::Animal(const Animal &src) 
 {
 	std::cout << "Animal copy constructor" << std::endl;
 	type = src.type;
 }
 
-Animal::~Animal() 
+AAnimal::~Animal() 
 {
 	std::cout << "Animal destructor" << std::endl;
 }
 
-Animal &Animal::operator=(const Animal &src) 
+AAnimal &AAnimal::operator=(const AAnimal &src) 
 {
 	std::cout << "Animal assignation operator" << std::endl;
 	if (this == &src)
@@ -37,7 +37,7 @@ Animal &Animal::operator=(const Animal &src)
 	return(*this);
 }
 
-const std::string &Animal::getType() const 
+const std::string &AAnimal::getType() const 
 {
 	return (type);
 }
