@@ -6,13 +6,13 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 04:12:05 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/21 10:52:09 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/22 12:18:56 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal() 
+Cat::Cat() : Animal()
 {
 	std::cout << "Cat default constructor" << std::endl;
 	type = "Cat";

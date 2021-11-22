@@ -6,13 +6,13 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 07:33:55 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/21 10:51:03 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/22 13:15:05 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal() , m_brain( new Brain() ) 
+Dog::Dog() : Animal() , _brain(new Brain()) 
 {
 	std::cout << "Dog default constructor" << std::endl;
 	type = "Dog";
@@ -22,18 +22,17 @@ Dog::Dog(const Dog &src) : Animal()
 {
 	std::cout << "Dog copy constructor" << std::endl;
 	type = src.type;
-    // Deep Copy
-    if ( src.m_brain ){
-        m_brain = new Brain(*src.m_brain);
-    } else {
-        m_brain = new Brain();
-    }	
+
+	if (src._brain)
+		_brain = new Brain(*src._brain);
+	else 
+		_brain = new Brain();
 }
 
 Dog::~Dog()
 {
 	std::cout << "Dog destructor" << std::endl;
-    delete m_brain;
+	delete _brain;
 }
 
 Dog &Dog::operator=(const Dog &src) 
@@ -42,14 +41,13 @@ Dog &Dog::operator=(const Dog &src)
 	if (this == &src)
 		return (*this);
 	type = src.type;
-    // Deep Copy
-    delete m_brain;
-    if ( src.m_brain ){
-        m_brain = new Brain(*src.m_brain);
-    } else {
-        m_brain = new Brain();
-    }
-    return (*this);
+
+	delete _brain;
+	if (src._brain)
+		_brain = new Brain(*src._brain);
+	else 
+		_brain = new Brain();
+	return (*this);
 }
 
 void Dog::makeSound() const 

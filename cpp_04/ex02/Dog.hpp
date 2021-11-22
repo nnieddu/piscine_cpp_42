@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 07:47:43 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/21 10:43:08 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/22 12:34:23 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Dog : public Animal 
 {
     private:
-        Brain *m_brain;	
+        Brain *_brain;	
 	public:
 		Dog();
 		Dog(const Dog &src);

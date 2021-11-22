@@ -6,27 +6,42 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 10:19:13 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/21 11:30:18 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/22 13:42:43 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-
-int	main()
+int     main()
 {
+	// const Animal *Ani = new Animal();
+
 	const Animal *dog = new Dog();
 	const Animal *cat = new Cat();
-	// const Animal *ani = new Animal();
-	
-	std::cout << std::endl;
-	dog->makeSound();
-	cat->makeSound();
-
 	std::cout << std::endl;
 	delete dog;
 	delete cat;
+	std::cout << std::endl;
+	
+	Animal *animals[4];
+	for (int i = 0 ; i < 4 ; i++)
+	{
+		if (i < 2)
+			animals[i] = new Dog();
+		else 
+			animals[i] = new Cat();
+	}
+	std::cout << std::endl;
+	for (int i = 0 ; i < 4 ; i++)
+		delete animals[i];
+	
+	std::cout << std::endl;
+	Dog *dogo = new Dog();
+	Dog *deepc (dogo);
+	delete dogo;
+	(void)deepc;
+	std::cout << std::endl;
 
 	return (0);
 }
