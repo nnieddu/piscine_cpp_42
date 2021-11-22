@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 04:05:23 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/21 10:53:01 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/22 12:06:02 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ Animal::Animal() : type("Animal")
 	std::cout << "Animal default constructor" << std::endl;
 }
 
-Animal::Animal(const Animal &src) 
+Animal::Animal(const Animal &src)
 {
-	std::cout << "Animal copy constructor" << std::endl;
-	type = src.type;
 }
 
 Animal::~Animal() 
