@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 05:09:30 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 04:43:35 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:32:40 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name)
 {
 	try 
 	{
-		check_grade(grade);
+		checkGrade(grade);
 		_grade = grade;
 	} 
 	catch (std::exception &e)
@@ -46,7 +46,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
     return (*this);
 }
 
-void Bureaucrat::check_grade(int grade) const 
+void Bureaucrat::checkGrade(int grade) const 
 {
 	if (grade < 1)
 		throw GradeTooHighException();
@@ -68,7 +68,7 @@ void	Bureaucrat::UpGrade()
 {
 	try 
 	{
-		check_grade(_grade - 1);
+		checkGrade(_grade - 1);
 		_grade--;
 	} 
 	catch (std::exception &e) 
@@ -81,7 +81,7 @@ void Bureaucrat::DownGrade()
 {
 	try 
 	{
-		check_grade(_grade + 1);
+		checkGrade(_grade + 1);
 		_grade++;
 	} 
 	catch (std::exception &e) 

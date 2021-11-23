@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 17:01:55 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 04:47:39 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:35:50 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int	main()
 {
 	Bureaucrat nini("Nini", 1);
-	Bureaucrat Dnini("Dnini", 150);
+	Bureaucrat dumbNini("dumbNini", 150);
 
 	std::cout << std::endl;
 
 	try 
 	{
-		std::cout << nini << "    | Try to upgrade : ";
+		std::cout << nini << "       Try to upgrade : ";
 		nini.UpGrade();
 	} 
 	catch (std::exception &e)
@@ -29,11 +29,10 @@ int	main()
 		std::cerr << e.what() << std::endl;
 	}
 
-
 	try 
 	{
-		std::cout << Dnini << " | Try to downgrade : ";
-		Dnini.DownGrade();
+		std::cout << dumbNini << " Try to downgrade : ";
+		dumbNini.DownGrade();
 	} 
 	catch (std::exception &e)
 	{
@@ -52,11 +51,10 @@ int	main()
 		std::cerr << e.what() << std::endl;
 	}
 
-
 	try 
 	{
 		std::cout << "Try to modify bureaucrat grade to 151 : ";
-		Bureaucrat Dnini("VeryDnini", 151);
+		Bureaucrat dumbNini("VeryDnini", 151);
 	} 
 	catch (std::exception &e)
 	{

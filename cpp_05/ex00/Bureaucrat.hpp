@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 05:09:33 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 05:48:25 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:32:40 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Bureaucrat
 	private:
 		const std::string	_name;
 		int					_grade;
-		void check_grade(int grade) const;
+		void checkGrade(int grade) const;
 
 	public:
 		Bureaucrat();

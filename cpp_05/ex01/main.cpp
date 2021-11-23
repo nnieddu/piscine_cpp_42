@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 16:35:06 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 06:09:18 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:36:28 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(void)
 	std::cout << lower_form << std::endl << std::endl;
 
 	std::cout << "----------------------------" << std::endl << std::endl;
-
 
 	Nini.signForm(form);
 	std::cout << form << std::endl << std::endl;

@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 06:38:53 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 10:42:44 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:34:05 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main()
 	std::cout << std::endl << "=============================" << std::endl << std::endl;
 	
 	PresidentialPardonForm Pform("target");
-	nini = Bureaucrat("nini",1);
+	nini = Bureaucrat("nini", 1);
 	phil = Bureaucrat("phil", 73);
 
 	std::cout << Pform << std::endl << std::endl;
