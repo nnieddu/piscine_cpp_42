@@ -6,17 +6,18 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:02:01 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 05:12:01 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 08:44:28 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Form_HPP
-# define Form_HPP
+#ifndef For_HPP
+# define For_HPP
 
-# include <iostream>
-# include <stdexcept>
-# include <string>
-# include "Bureaucrat.hpp"
+#include <iostream>
+#include <stdexcept>
+#include <string>
+#include <fstream>
+#include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
@@ -29,8 +30,8 @@ class Form
 		const int			_exec_grade;
 	public:
 		Form();
-		Form(const Form &src);
 		Form(const std::string name, const int sign_grade, const int exec_grade);
+		Form(const Form &src);
 		virtual ~Form();
 		Form &operator=(const Form &src);
 
@@ -40,6 +41,8 @@ class Form
 		int getExecGrade() const;
 
 		void beSigned(const Bureaucrat &bureaucrat);
+		void isExecutable( const Bureaucrat &executor ) const;
+		virtual void execute(const Bureaucrat &executor) const = 0;
 
 		struct GradeTooHigh : public std::exception 
 		{
@@ -47,6 +50,16 @@ class Form
 		};
 
 		struct GradeTooLow : public std::exception 
+		{
+			virtual const char *what() const throw();
+		};
+		
+		struct FormNotSigned : public std::exception 
+		{
+			virtual const char *what() const throw();
+		};
+		
+		struct AlreasdySign : public std::exception 
 		{
 			virtual const char *what() const throw();
 		};

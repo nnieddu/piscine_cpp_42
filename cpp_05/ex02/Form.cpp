@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:01:58 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 06:02:11 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 08:47:10 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ const std::string&Form::getName() const
 }
 
 bool Form::getSigned() const 
-{ 
+{
 	return _signed;
 }
 
@@ -71,7 +71,20 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 	{
 		throw GradeTooLow();
 	}
+	if (_signed == true)
+		throw Form::AlreasdySign();
 	_signed = true;
+}
+
+void Form::isExecutable( const Bureaucrat &executor ) const {
+	int grade = executor.getGrade();
+
+	if ( grade < _exec_grade ){
+		throw GradeTooHigh();
+	}
+	if ( grade > _exec_grade ){
+		throw GradeTooLow();
+	}
 }
 
 const char *Form::GradeTooHigh::what() const throw() 
@@ -82,6 +95,16 @@ const char *Form::GradeTooHigh::what() const throw()
 const char *Form::GradeTooLow::what() const throw() 
 {
 	return "Form grade too low.";
+}
+
+const char *Form::FormNotSigned::what() const throw() 
+{
+	return "Form's not signed.";
+}
+
+const char *Form::AlreasdySign::what() const throw() 
+{
+	return "Form's already signed.";
 }
 
 std::ostream&operator<<(std::ostream &os, const Form &form)

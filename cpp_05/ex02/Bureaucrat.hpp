@@ -6,12 +6,12 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 05:09:33 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 05:49:04 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 07:54:51 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef Bureaucrat_HPP
-#define Bureaucrat_HPP
+# define Bureaucrat_HPP
 
 #include <iostream>
 #include <string>
@@ -38,7 +38,9 @@ class Bureaucrat
 		int getGrade() const;
 		void UpGrade();
 		void DownGrade();
+
 		void signForm(Form &form) const;
+		void executeForm( Form &form ) const;
 
 		struct GradeTooHighException : public std::exception 
 		{
