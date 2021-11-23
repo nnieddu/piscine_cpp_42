@@ -6,11 +6,15 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 05:09:30 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 20:57:00 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 04:43:35 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat() : _name("Default Employe"), _grade(150) 
+{
+}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name) 
 {
@@ -60,7 +64,7 @@ int	Bureaucrat::getGrade() const
 	return _grade;
 }
 
-void	Bureaucrat::incGrade() 
+void	Bureaucrat::UpGrade() 
 {
 	try 
 	{
@@ -73,7 +77,7 @@ void	Bureaucrat::incGrade()
 	}
 }
 
-void Bureaucrat::decGrade() 
+void Bureaucrat::DownGrade() 
 {
 	try 
 	{
@@ -98,6 +102,6 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream&operator<<(std::ostream &os, const Bureaucrat &src) 
 {
-    os << src.getName() << " grade = " << src.getGrade();
+    os << src.getName() << ", bureaucrat grade : " << src.getGrade();
     return os;
 }

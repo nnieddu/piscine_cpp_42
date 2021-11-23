@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 17:01:55 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 21:00:11 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 04:47:39 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,47 +14,62 @@
 
 int	main()
 {
-	Bureaucrat a("A", 1);
-	Bureaucrat d("D", 150);
+	Bureaucrat nini("Nini", 1);
+	Bureaucrat Dnini("Dnini", 150);
 
-	std::cout << a << std::endl;
-	std::cout << d << std::endl;
+	std::cout << std::endl;
 
 	try 
 	{
-		a.incGrade();
+		std::cout << nini << "    | Try to upgrade : ";
+		nini.UpGrade();
 	} 
 	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
 
+
 	try 
 	{
-		Bureaucrat b("B", 0);
+		std::cout << Dnini << " | Try to downgrade : ";
+		Dnini.DownGrade();
 	} 
 	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
 
+		std::cout << std::endl;
+
 	try 
 	{
-		Bureaucrat c("B", 151);
+		std::cout << "Try to create bureaucrat with grade 0 : ";
+		Bureaucrat Zero("Zero", 0);
 	} 
 	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
 
+
 	try 
 	{
-		d.decGrade();
+		std::cout << "Try to modify bureaucrat grade to 151 : ";
+		Bureaucrat Dnini("VeryDnini", 151);
 	} 
 	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+
+	std::cout << std::endl;
+	Bureaucrat Employe;
+	std::cout << Employe << std::endl;
+	Employe.UpGrade();
+	std::cout << Employe << std::endl;
+	Employe.DownGrade();
+	std::cout << Employe << std::endl;
 
 	return (0);
 }
