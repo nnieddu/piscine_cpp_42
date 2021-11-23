@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/21 11:46:12 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/22 15:57:40 by ninieddu         ###   ########lyon.fr    #
+#    Created: 2021/11/22 16:34:46 by ninieddu          #+#    #+#              #
+#    Updated: 2021/11/22 20:51:17 by ninieddu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ COMP 	=	clang++
 
 FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-SRC		=	Bureaucrat.cpp main.cpp
+SRC		=	Bureaucrat.cpp Form.cpp main.cpp
 
-INCS	=	Bureaucrat.hpp 
+INCS	=	Bureaucrat.hpp Form.hpp
 
 OBJ		=	$(SRC:.cpp=.o)
 

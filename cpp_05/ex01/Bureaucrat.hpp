@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 05:09:33 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 20:58:36 by ninieddu         ###   ########.fr       */
+/*   Created: 2021/11/22 16:35:38 by ninieddu          #+#    #+#             */
+/*   Updated: 2021/11/22 20:58:48 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat 
 {
 	private:
 		const std::string	_name;
 		int					_grade;
-		void check_grade(int grade) const;
+		void is_valid_grade(int grade) const;
 
 	public:
 		Bureaucrat(const std::string &name, int grade);
@@ -34,6 +37,8 @@ class Bureaucrat
 		int getGrade() const;
 		void incGrade();
 		void decGrade();
+
+		void signForm(Form &form) const;
 
 		struct GradeTooHighException : public std::exception 
 		{
