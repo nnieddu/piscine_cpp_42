@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 16:35:38 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 20:58:48 by ninieddu         ###   ########.fr       */
+/*   Created: 2021/11/21 05:09:33 by ninieddu          #+#    #+#             */
+/*   Updated: 2021/11/23 05:49:04 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ class Bureaucrat
 	private:
 		const std::string	_name;
 		int					_grade;
-		void is_valid_grade(int grade) const;
+		void check_grade(int grade) const;
 
 	public:
+		Bureaucrat();
 		Bureaucrat(const std::string &name, int grade);
         Bureaucrat(const Bureaucrat &src);
 		virtual ~Bureaucrat();
@@ -35,9 +36,8 @@ class Bureaucrat
 
 		const std::string &getName() const;
 		int getGrade() const;
-		void incGrade();
-		void decGrade();
-
+		void UpGrade();
+		void DownGrade();
 		void signForm(Form &form) const;
 
 		struct GradeTooHighException : public std::exception 
