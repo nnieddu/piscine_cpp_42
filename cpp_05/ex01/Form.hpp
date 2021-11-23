@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:02:01 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 05:12:01 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:11:14 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ class Form
 		};
 
 		struct GradeTooLow : public std::exception 
+		{
+			virtual const char *what() const throw();
+		};
+		
+		struct AlreasdySign : public std::exception 
 		{
 			virtual const char *what() const throw();
 		};

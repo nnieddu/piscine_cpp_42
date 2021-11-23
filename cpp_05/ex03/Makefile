@@ -6,19 +6,19 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 16:34:46 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/22 20:51:17 by ninieddu         ###   ########.fr        #
+#    Updated: 2021/11/23 10:04:28 by ninieddu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Form
+NAME	=	Intern
 
 COMP 	=	clang++
 
 FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-SRC		=	Bureaucrat.cpp Form.cpp main.cpp
+SRC		=	Bureaucrat.cpp Form.cpp main.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
-INCS	=	Bureaucrat.hpp Form.hpp
+INCS	=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
 
 OBJ		=	$(SRC:.cpp=.o)
 

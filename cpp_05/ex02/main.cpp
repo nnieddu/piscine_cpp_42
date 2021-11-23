@@ -6,15 +6,14 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 06:38:53 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 09:52:14 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:03:35 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
-// #include "PresidentialPardonForm.hpp"
-#include <cstdlib>
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
@@ -43,12 +42,28 @@ int main()
 	nini.signForm(Rform);
 	phil.executeForm(Rform);
 
+	std::cout << std::endl << "=============================" << std::endl << std::endl;
+	
+	PresidentialPardonForm Pform("target");
+	nini = Bureaucrat("nini",1);
+	phil = Bureaucrat("phil", 73);
+
+	std::cout << Pform << std::endl << std::endl;
+	nini.executeForm(Pform);
+	phil.signForm(Pform);
+	nini.signForm(Pform);
+	phil.executeForm(Pform);
+	nini.executeForm(Pform);
+	nini.signForm(Pform);
+
 	return (0);
 }
 
 
 
 
+
+// #include <cstdlib>
 // int main()
 // {
 // 	int max = 2;

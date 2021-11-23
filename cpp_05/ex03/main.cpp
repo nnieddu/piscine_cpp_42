@@ -5,64 +5,70 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 16:35:06 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 21:01:05 by ninieddu         ###   ########.fr       */
+/*   Created: 2021/11/23 06:38:53 by ninieddu          #+#    #+#             */
+/*   Updated: 2021/11/23 10:03:35 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-int	main(void)
+int main()
 {
-	Bureaucrat Nini("ninieddu", 100);
-	Form too_high_form("Form 0B", 10, 10);
-	Form too_low_form("Form 1B", 101, 100);
-	Form form("Form 2B", 100, 100);
+	ShrubberyCreationForm form("maison");
+	Bureaucrat nini("nini", 145);
+	Bureaucrat phil("phil", 137);
+	
+	std::cout << form << std::endl << std::endl;
+	nini.executeForm(form);
+	nini.signForm(form);
+	nini.executeForm(form);
+	phil.signForm(form);
+	phil.executeForm(form);
 
-	Nini.signForm(form);
-	Nini.signForm(too_high_form);
-	Nini.signForm(too_low_form);
+	std::cout << std::endl << "=============================" << std::endl << std::endl;
 
-	std::cout << Nini << std::endl;
-	std::cout << form << std::endl;
-	std::cout << too_high_form << std::endl;
-	std::cout << too_low_form << std::endl;
+	RobotomyRequestForm Rform("target");
+	nini = Bureaucrat("nini", 45);
+	phil = Bureaucrat("phil", 73);
 
-	try 
-	{
-		Form f("Form", 160, 1);
-	} 
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	std::cout << Rform << std::endl << std::endl;
+	nini.executeForm(Rform);
+	phil.signForm(Rform);
+	nini.signForm(Rform);
+	nini.executeForm(Rform);
+	nini.signForm(Rform);
+	phil.executeForm(Rform);
 
-	try 
-	{
-		Form f("Form", -1, 1);
-	} 
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	std::cout << std::endl << "=============================" << std::endl << std::endl;
+	
+	PresidentialPardonForm Pform("target");
+	nini = Bureaucrat("nini",1);
+	phil = Bureaucrat("phil", 73);
 
-	try 
-	{
-		Form f("Form", 1, 160);
-	} 
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	std::cout << Pform << std::endl << std::endl;
+	nini.executeForm(Pform);
+	phil.signForm(Pform);
+	nini.signForm(Pform);
+	phil.executeForm(Pform);
+	nini.executeForm(Pform);
+	nini.signForm(Pform);
 
-	try 
-	{
-		Form f("Form", 1, -1);
-	} 
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
 	return (0);
 }
+
+
+
+
+
+// #include <cstdlib>
+// int main()
+// {
+// 	int max = 2;
+// 	srand(time(0));
+// 	std::cout << rand()%max << std::endl;
+// 	std::cout << time(0) << std::endl;
+// 	return 0;
+// }
