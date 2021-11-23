@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 06:39:49 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 10:31:02 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 19:46:50 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 	if (getSigned())
 	{
 		std::string filename = _target + "_shrubbery";
-		std::ofstream outfile(filename.c_str(), std::ios::app);
+		std::ofstream outfile(filename.c_str());
 		for (int i = 0; i < 10 ; i++)
 			outfile << g_tree[i] << std::endl;
 	} 
