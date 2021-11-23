@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 06:39:49 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 09:40:03 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:31:02 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
 	try 
 	{
-		Check_Executability(executor);
+		checkExecutability(executor);
 	} 
 	catch (std::exception &e)
 	{

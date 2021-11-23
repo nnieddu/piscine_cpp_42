@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:01:58 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 10:24:18 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:31:02 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,6 @@ int Form::getExecGrade() const
 
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
-	// if (bureaucrat.getGrade() < _sign_grade)
-	// {
-	// 	throw GradeTooHigh();
-	// }
 	if (bureaucrat.getGrade() > _sign_grade)
 	{
 		throw GradeTooLow();
@@ -80,15 +76,9 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 	_signed = true;
 }
 
-void Form::Check_Executability( const Bureaucrat &executor ) const 
+void Form::checkExecutability(const Bureaucrat &executor) const 
 {
-	int grade = executor.getGrade();
-
-	// if (grade < _exec_grade)
-	// {
-	// 	throw GradeTooHigh();
-	// }
-	if (grade > _exec_grade)
+	if (executor.getGrade() > _exec_grade)
 	{
 		throw GradeTooLow();
 	}

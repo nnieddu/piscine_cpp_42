@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:02:01 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 09:37:12 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:31:02 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Form
 		int getExecGrade() const;
 
 		void beSigned(const Bureaucrat &bureaucrat);
-		void Check_Executability( const Bureaucrat &executor ) const;
+		void checkExecutability( const Bureaucrat &executor ) const;
 		virtual void execute(const Bureaucrat &executor) const = 0;
 
 		struct GradeTooHigh : public std::exception 

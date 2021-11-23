@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 10:40:32 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 10:52:28 by ninieddu         ###   ########.fr       */
+/*   Created: 2021/11/23 10:36:01 by ninieddu          #+#    #+#             */
+/*   Updated: 2021/11/23 10:52:13 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
-int		main(void)
+Intern::Intern()
 {
-	// Intern someRandomIntern;
-	// Form* rrf;
-	// rrf = someRandomIntern.makeForm("roboto my request", "Bender");
-
-	return (0);
 }
+
+Intern::Intern(const Intern &src) 
+{
+    (void)src;
+}
+
+Intern::~Intern()
+{
+}
+
+Intern &Intern::operator=(const Intern &src)
+{
+    if (this == &src)
+		return (*this);
+    return (*this);
+}
+
+// Form *Intern::makeForm(const std::string &formName, const std::string &target)
+// {
+// 	return NULL;
+// }

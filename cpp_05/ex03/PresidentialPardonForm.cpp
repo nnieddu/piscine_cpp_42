@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 06:39:49 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 10:01:07 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:33:09 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
 	try 
 	{
-		Check_Executability(executor);
+		checkExecutability(executor);
 	} 
 	catch (std::exception &e)
 	{

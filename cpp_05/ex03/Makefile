@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/22 16:34:46 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/23 10:04:28 by ninieddu         ###   ########.fr        #
+#    Created: 2021/11/23 06:10:57 by ninieddu          #+#    #+#              #
+#    Updated: 2021/11/23 10:52:42 by ninieddu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,10 @@ $(NAME) : $(OBJ)
 	$(COMP) $(FLAG) $(OBJ) -o $(NAME)
 
 clean :
-	rm -f $(OBJ)
+	rm -f $(OBJ) *_shrubbery
 
 fclean :
-	rm -f $(NAME) $(OBJ)
+	rm -f $(NAME) $(OBJ) *_shrubbery
 
 re : fclean all
 

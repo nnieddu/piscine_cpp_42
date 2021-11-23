@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 05:09:30 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 10:26:47 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 10:33:28 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ void Bureaucrat::signForm(Form &form) const
 {
 	try 
 	{
-		std::cout << getName() << " sign " << form.getName() << std::endl;
 		form.beSigned(*this);
+		std::cout << getName() << " sign " << form.getName() << std::endl;
 	} 
 	catch (std::exception &e)
 	{
@@ -108,7 +108,7 @@ void Bureaucrat::executeForm( Form &form ) const
 	try 
 	{
 		form.execute(*this);
-		std::cout << getName() << " execute " << form.getName() << std::endl;
+		std::cout << getName() << " has executed " << form.getName() << std::endl;
 	} 
 	catch ( std::exception &e )
 	{
