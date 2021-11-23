@@ -1,21 +1,41 @@
-CC		= c++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98
-NAME	= Forms
-SRCS	=	main.cpp \
-			Form.cpp \
-			Bureaucrat.cpp \
-			ShrubberyCreationForm.cpp \
-			PresidentialPardonForm.cpp \
-			RobotomyRequestForm.cpp
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/23 06:10:57 by ninieddu          #+#    #+#              #
+#    Updated: 2021/11/23 06:11:57 by ninieddu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-all: $(NAME)
+NAME	=	Forms
 
-$(NAME): $(SRCS)
-	$(CC) $(CFLAGS) -o $(NAME) $(SRCS)
+COMP 	=	clang++
 
-clean:
-	rm -f $(NAME)
+FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-fclean: clean
+SRC		=	Bureaucrat.cpp Form.cpp main.cpp #ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp 
 
-re: fclean all
+INCS	=	Bureaucrat.hpp Form.hpp #ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+
+OBJ		=	$(SRC:.cpp=.o)
+
+%.o : %.cpp $(INCS)
+	$(COMP) $(FLAG) -c $< -o $@
+
+all : $(NAME)
+
+$(NAME) : $(OBJ)
+	$(COMP) $(FLAG) $(OBJ) -o $(NAME)
+
+clean :
+	rm -f $(OBJ)
+
+fclean :
+	rm -f $(NAME) $(OBJ)
+
+re : fclean all
+
+.PHONY : all clean fclean re

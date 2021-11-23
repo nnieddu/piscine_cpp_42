@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 21:02:01 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/22 21:02:54 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 05:12:01 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Form
 		const int			_sign_grade;
 		const int			_exec_grade;
 	public:
+		Form();
 		Form(const Form &src);
 		Form(const std::string name, const int sign_grade, const int exec_grade);
 		virtual ~Form();
