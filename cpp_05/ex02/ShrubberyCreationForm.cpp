@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 06:39:49 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 08:33:16 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/23 09:37:12 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
 	try 
 	{
-		isExecutable(executor);
+		Check_Executability(executor);
 	} 
 	catch (std::exception &e)
 	{

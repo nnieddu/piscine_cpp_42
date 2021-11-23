@@ -6,7 +6,7 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 06:10:57 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/23 08:40:12 by ninieddu         ###   ########.fr        #
+#    Updated: 2021/11/23 09:07:56 by ninieddu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ COMP 	=	clang++
 
 FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-SRC		=	Bureaucrat.cpp Form.cpp main.cpp ShrubberyCreationForm.cpp #RobotomyRequestForm.cpp PresidentialPardonForm.cpp 
+SRC		=	Bureaucrat.cpp Form.cpp main.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp #PresidentialPardonForm.cpp 
 
-INCS	=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp #RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+INCS	=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp #PresidentialPardonForm.hpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
