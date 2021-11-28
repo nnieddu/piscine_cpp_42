@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 10:40:32 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/28 06:29:11 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/28 10:35:01 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ int main()
 	delete rrf;
 
 	rrf = someRandomIntern.makeForm("wtf", "Bender");
-	
 	return (0);
 }
