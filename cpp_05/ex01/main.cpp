@@ -6,14 +6,14 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 16:35:06 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:36:28 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/28 06:29:24 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Form.hpp"
 
-int	main(void)
+int	main()
 {
 	Bureaucrat Nini("Ninieddu", 100);
 

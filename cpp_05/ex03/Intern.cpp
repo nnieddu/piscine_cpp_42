@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 10:36:01 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/23 18:40:09 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/28 06:32:34 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,11 @@ Intern::~Intern()
 {
 }
 
-Intern &Intern::operator=(const Intern &b)
+Intern &Intern::operator=(const Intern &src)
 {
-	(void)b;
+	(void)src;
 	return (*this);
 }
-
-std::string FormNames[3] = 
-{
-	"roboto my request",
-	"shrubbery request",
-	"presidential request"
-};
 
 Form *presidential_f(std::string target)
 {
@@ -56,19 +49,26 @@ Form *shrubbery_f(std::string target)
 	return (new ShrubberyCreationForm(target));
 }
 
-Form *(*functptr[])(std::string target) = 
-{
-  robotomy_f, 
-  shrubbery_f, 
-  presidential_f
-};
-
 Form *Intern::makeForm(std::string NameForm, std::string TargetForm)
 {
+	std::string formNames[3] = 
+	{
+		"roboto my request",
+		"shrubbery request",
+		"presidential request"
+	};
+	
+	Form *(*ftPtr[])(std::string target) = 
+	{
+	  robotomy_f, 
+	  shrubbery_f, 
+	  presidential_f
+	};
+
 	for (int i = 0; i < 3; i++)
 	{
-		if (FormNames[i] == NameForm)
-			return ((*functptr[i])(TargetForm));
+		if (formNames[i] == NameForm)
+			return ((*ftPtr[i])(TargetForm));
 	}
 	std::cout << "The form doesn't exist." << std::endl;
 	return (NULL);
