@@ -6,11 +6,11 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/21 11:46:12 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/23 19:49:23 by ninieddu         ###   ########lyon.fr    #
+#    Updated: 2021/11/28 13:06:58 by ninieddu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Conversions
+NAME	=	convert
 
 COMP 	=	clang++
 
