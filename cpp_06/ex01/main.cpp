@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:49:35 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/29 13:36:46 by ninieddu         ###   ########lyon.fr   */
+/*   Updated: 2021/11/29 16:11:41 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int	main()
 	std::cout << "School 	: " << data.school << std::endl;
 	std::cout << "Data adr: " << &data << std::endl << std::endl;
 	
-	deserialize(serialize(&data));
+	std::cout << std::endl << "Raw data: " << serialize(&data) << std::endl << std::endl;
+	data = *deserialize(serialize(&data));
 
 	std::cout << "Name   	: " << data.name << std::endl;
 	std::cout << "School 	: " << data.school << std::endl;
