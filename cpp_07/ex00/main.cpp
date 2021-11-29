@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 21:48:38 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/28 22:15:40 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/28 22:22:47 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,18 @@ int		main()
 
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	::swap(a, b);
-	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "a = " << a << ", b = " << b << std::endl << std::endl;
 	std::cout << "min = " << ::min(a, b) << std::endl;
 	std::cout << "max = " << ::max(a, b) << std::endl;
 
-
 	std::cout << std::endl;
-
 
 	std::string c = "sample A";
 	std::string d = "sample B";
 
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "c = " << c << ", d = " << d << std::endl << std::endl;
 	std::cout << "min = " << ::min(c, d) << std::endl;
 	std::cout << "max = " << ::max(c, d) << std::endl;
 
