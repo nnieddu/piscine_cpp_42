@@ -6,7 +6,7 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 06:10:57 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/28 21:57:01 by ninieddu         ###   ########.fr        #
+#    Updated: 2021/11/29 04:37:19 by ninieddu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,10 @@ $(NAME) : $(OBJ)
 	$(COMP) $(FLAG) $(OBJ) -o $(NAME)
 
 clean :
-	rm -f $(OBJ) *_shrubbery
+	rm -f $(OBJ)
 
 fclean :
-	rm -f $(NAME) $(OBJ) *_shrubbery
+	rm -f $(NAME) $(OBJ)
 
 re : fclean all
 
