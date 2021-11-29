@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 03:36:07 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/29 04:39:29 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/29 14:36:37 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,19 @@ void Tprint(const T &toPrint)
 	std::cout << toPrint << std::endl;
 }
 
-void intIter()
-{
-	int sample[3] = {1, 2, 3};
-
-	iter(sample, 3, Tprint);
-}
-
-void stringIter()
-{
-	std::string sample[3] = {"A", "B", "C"};
-	
-	iter(sample, 3, Tprint);
-}
-
 int	main(void)
 {
-	intIter();
+	int 		intIter[3] = {1, 2, 3};
+	std::string stringIter[3] = {"A", "B", "C"};
+	niniSample	nini[3];
+	
+	iter(intIter, 3, Tprint);
 	std::cout << std::endl;
-
-	stringIter();
+	
+	iter(stringIter, 3, Tprint);
 	std::cout << std::endl;
+	
+	iter(nini, 3, Tprint);
 	
 	return (0);
 }
