@@ -6,11 +6,11 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 06:10:57 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/28 21:57:01 by ninieddu         ###   ########.fr        #
+#    Updated: 2021/11/29 04:37:14 by ninieddu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	FewFt
+NAME	=	Iter
 
 COMP 	=	clang++
 
@@ -18,7 +18,7 @@ FLAG	=	-Wall -Wextra -Werror -std=c++98
 
 SRC		=	main.cpp
 
-INCS	=	FewFt.hpp
+INCS	=	Iter.hpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
@@ -31,10 +31,10 @@ $(NAME) : $(OBJ)
 	$(COMP) $(FLAG) $(OBJ) -o $(NAME)
 
 clean :
-	rm -f $(OBJ) *_shrubbery
+	rm -f $(OBJ)
 
 fclean :
-	rm -f $(NAME) $(OBJ) *_shrubbery
+	rm -f $(NAME) $(OBJ)
 
 re : fclean all
 
