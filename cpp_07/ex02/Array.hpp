@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 04:36:28 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/29 06:05:26 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/29 14:39:36 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ class Array
 	private:
 		unsigned int	_size;
 		T				*_items;
+
 	public:
 		Array() : _size(0), _items(NULL) {}
 		Array(unsigned int n) : _size(n), _items(new T[n]()) {}
 
-		virtual ~Array() {delete[] _items;}
+		~Array() {delete[] _items;}
 
         Array(const Array &src)
         {
@@ -56,11 +57,15 @@ class Array
 			return (_items[i]);
 		}
 
-		unsigned int size() const {
-			return (_size);}
+		unsigned int size() const 
+		{
+			return (_size);
+		}
 
-		struct Exception : std::exception {
-		  const char* what() const throw() {return ("Error: i is out of the limits");}};
+		struct Exception : std::exception 
+		{
+		  const char* what() const throw() {return ("Error: i is out of the limits");}
+		};
 };
 
 #endif

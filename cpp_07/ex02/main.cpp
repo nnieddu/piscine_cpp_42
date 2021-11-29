@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 04:36:48 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/29 06:09:32 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/29 14:53:21 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,29 @@
 #include <cstdlib>
 #include "Array.hpp"
 
+void subjectTest()
+{
+	int * a = new int();
+	std::cout << *a << std::endl << std::endl;
+	delete a;
+}
+
 void intArray()
 {
-	Array<int> arr(3);
-	Array<int> assign;
-
-	for (unsigned int i = 0 ; i < arr.size() ; i++)
-		arr[i] = i + 1;
+	Array<int> intArray(3);
+	for (unsigned int i = 0 ; i < intArray.size() ; i++)
+		intArray[i] = i + 1;
 
 	std::cout << "Original array : " << std::endl;
-	for (unsigned int i = 0 ; i < arr.size() ; i++)
-		std::cout << arr[i] << std::endl;
+	for (unsigned int i = 0 ; i < intArray.size() ; i++)
+		std::cout << intArray[i] << std::endl;
 
-	Array<int> copy(arr);
+	Array<int> copy(intArray);
 	std::cout << "Copied : " << std::endl;
 	for (unsigned int i = 0 ; i < copy.size() ; i++)
 		std::cout << copy[i] << std::endl;
 
+	Array<int> assign;
 	assign = copy;
 	std::cout << "Assigned : " << std::endl;
 	for (unsigned int i = 0 ; i < assign.size() ; i++)
@@ -39,22 +45,20 @@ void intArray()
 
 void stringArray() 
 {
-	const char *abc[3] = {"A", "B", "C"};
-	Array<std::string> arr(3);
-	Array<std::string> assign;
-
-	for (unsigned int i = 0 ; i < arr.size() ; i++)
-		arr[i] = abc[i];
+	Array<std::string> stringArray(3);
+	for (unsigned int i = 0 ; i < stringArray.size() ; i++)
+		stringArray[i] = 'A' + i;
 
 	std::cout << "Original array :" << std::endl;
-	for (unsigned int i = 0 ; i < arr.size() ; i++)
-		std::cout << arr[i] << std::endl;
+	for (unsigned int i = 0 ; i < stringArray.size() ; i++)
+		std::cout << stringArray[i] << std::endl;
 
-	Array<std::string> copy(arr);
+	Array<std::string> copy(stringArray);
 	std::cout << "Copied :" << std::endl;
 	for (unsigned int i = 0 ; i < copy.size() ; i++)
 		std::cout << copy[i] << std::endl;
 
+	Array<std::string> assign;
 	assign = copy;
 	std::cout << "Assigned :" << std::endl;
 	for (unsigned int i = 0 ; i < assign.size() ; i++)
@@ -64,7 +68,6 @@ void stringArray()
 void emptyArray() 
 {
 	Array<int> arr;
-
 	try
 	{
 		std::cout << arr[1] << std::endl;
@@ -77,15 +80,17 @@ void emptyArray()
 
 int	main(void)
 {
-	int * a = new int();
-	std::cout << *a << std::endl << std::endl;
-	delete a;
+	subjectTest();
+	std::cout << std::endl;
 
 	intArray();
 	std::cout << std::endl;
+	
 	stringArray();
 	std::cout << std::endl;
+	
 	emptyArray();
+	
 	return (0);
 }
 
