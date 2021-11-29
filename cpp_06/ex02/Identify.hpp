@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Identify.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 07:15:57 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/28 21:43:53 by ninieddu         ###   ########.fr       */
+/*   Created: 2021/11/25 07:15:26 by ninieddu          #+#    #+#             */
+/*   Updated: 2021/11/28 21:43:26 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Identify.hpp"
+#ifndef IDENTIFY_HPP
+#define IDENTIFY_HPP
 
-int	main()
+#include <iostream>
+#include <cstdlib>
+
+class Base 
 {
-	Base *base = generate();
-	Base *bad_base = new nini;
+	public:
+		virtual ~Base();
+};
 
-	identify(base);
-	identify(*base);
+class A : public Base {};
 
-	std::cout << std::endl;
+class B : public Base {};
 
-	identify(bad_base);
-	identify(*bad_base);
-	
-	delete base;
-	delete bad_base;
+class C : public Base {};
 
-	return (0);
-}
+class nini : public Base {};
+
+Base *generate(void);
+void identify(Base * p);
+void identify( Base & p);
+
+#endif

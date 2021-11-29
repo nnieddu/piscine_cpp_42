@@ -6,7 +6,7 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/21 11:46:12 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/28 19:48:12 by ninieddu         ###   ########.fr        #
+#    Updated: 2021/11/28 21:43:38 by ninieddu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ COMP 	=	clang++
 
 FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-SRC		=	main.cpp classes.cpp
+SRC		=	main.cpp Identify.cpp
 
-INCS	=	classes.hpp
+INCS	=	Identify.hpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
