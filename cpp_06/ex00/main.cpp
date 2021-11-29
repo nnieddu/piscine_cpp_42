@@ -6,20 +6,20 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:49:35 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/28 13:20:25 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/28 19:09:24 by ninieddu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cmath> 
-#include <cstdlib>
 #include <climits>
 #include <cstring>
+
 
 void	toChar(double arg)
 {
 	std::cout << "char: ";
-	if (arg < CHAR_MIN || arg > CHAR_MAX || std::isnan(arg))
+	if (arg < CHAR_MIN || arg > CHAR_MAX || isnan(arg) || isinf(arg))
 	{
 		std::cout << "impossible" << std::endl;
 		return ;
@@ -33,7 +33,7 @@ void	toChar(double arg)
 void	toInt(double arg)
 {
 	std::cout << "int: ";
-	if (static_cast<int>(arg) > INT_MAX || static_cast<int>(arg) < INT_MIN || std::isnan(arg))
+	if (arg > INT_MAX || arg < INT_MIN || isnan(arg))
 	{
 		std::cout << "impossible" << std::endl; 
 		return ;
@@ -41,11 +41,11 @@ void	toInt(double arg)
 	std::cout << static_cast<int>(arg) << std::endl;	
 }
 
-void	toFloat(double arg) 
+void	toFloat(double arg)
 {
 	std::cout << "float: ";
-	if (static_cast<float>(arg) == HUGE_VAL)
-		std::cout << "impossible" << std::endl;
+	if (arg == HUGE_VAL || arg == -HUGE_VAL || isinf(static_cast<float>(arg)))
+		std::cout << "impossible" << std::endl;	
 	else
 		std::cout << static_cast<float>(arg) << "f" << std::endl;
 }
@@ -53,7 +53,7 @@ void	toFloat(double arg)
 void	toDouble(double arg) 
 {
 	std::cout << "double: ";
-	if (static_cast<double>(arg) == HUGE_VAL)
+	if (arg == HUGE_VAL || arg == -HUGE_VAL)
 	{
 		std::cout << "impossible" << std::endl;
 		return ;
@@ -63,27 +63,27 @@ void	toDouble(double arg)
 
 int	main(int ac, char **av)
 {
-	double arg = 0;
-	
+	double arg;
+
 	if (ac == 2)
 	{
-		std::cout << arg << std::endl;
 		arg = strtod(av[1], NULL);
-		std::cout << arg;
-		if (arg == 0)
+		if (arg == 0 && av[1] && isalpha(arg))
+	 		arg = av[1][0];
+		toChar(arg);
+		toInt(arg);
+		if (!strchr(av[1], '.'))
 		{
-		 if (strlen(av[1]) > 1)
-		 	arg = av[1][0];
+			std::cout.setf(std::ios::fixed);
+			std::cout.precision(1);
 		}
-			toChar(arg);
-			toInt(arg);
-			toFloat(arg);
-			toDouble(arg);
-		}
-		else
-		{
-			std::cerr << "Nothing, to convert, need arg !" << std::endl;
-			return(-1);
-		}
+		toFloat(arg);
+		toDouble(arg);
+	}
+	else
+	{
+		std::cerr << "Nothing, to convert, need an arg !" << std::endl;
+		return(-1);
+	}
 	return (0);
 }
