@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:49:35 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/28 19:15:33 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/29 13:25:38 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ int	main(int ac, char **av)
 	if (ac == 2)
 	{
 		arg = strtod(av[1], NULL);
-		if (arg == 0 && av[1] && isalpha(arg))
-	 		arg = av[1][0];
+		if (arg == 0 && av[1] && !isdigit(av[1][0]))
+		 	arg = av[1][0];
 		toChar(arg);
 		toInt(arg);
 		if (!strchr(av[1], '.'))
