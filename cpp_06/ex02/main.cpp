@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 07:15:57 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/28 21:43:53 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/29 13:40:44 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,17 @@
 int	main()
 {
 	Base *base = generate();
-	Base *bad_base = new nini;
-
+	Base *badBase = new nini;
+	
 	identify(base);
 	identify(*base);
 
 	std::cout << std::endl;
 
-	identify(bad_base);
-	identify(*bad_base);
+	identify(badBase);
+	identify(*badBase);
 	
 	delete base;
-	delete bad_base;
-
+	delete badBase;
 	return (0);
 }

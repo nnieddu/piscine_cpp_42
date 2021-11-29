@@ -6,7 +6,7 @@
 /*   By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 07:10:07 by ninieddu          #+#    #+#             */
-/*   Updated: 2021/11/28 21:43:12 by ninieddu         ###   ########.fr       */
+/*   Updated: 2021/11/29 13:41:29 by ninieddu         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void identify(Base * p)
 		std::cout << "C" << std::endl;
         return ;
 	}
-	std::cerr << "Error." << std::endl;
+	std::cerr << "Error unknown class." << std::endl;
 }
 
 void identify(Base & p)
@@ -85,5 +85,6 @@ void identify(Base & p)
     catch (std::exception &e)
     { 
     }
-	std::cerr << "Error." << std::endl;
+
+	std::cerr << "Error unknown class." << std::endl;
 }
