@@ -6,7 +6,7 @@
 #    By: ninieddu <ninieddu@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 06:10:57 by ninieddu          #+#    #+#              #
-#    Updated: 2021/11/29 16:56:12 by ninieddu         ###   ########lyon.fr    #
+#    Updated: 2021/12/03 07:28:23 by ninieddu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ COMP 	=	c++
 
 FLAG	=	-Wall -Wextra -Werror -std=c++98
 
-SRC		=	main.cpp Span.cpp
+SRC		=	main.cpp
 
-INCS	=	Span.hpp
+INCS	=	mutantstack.hpp mutantstack.cpp
 
 OBJ		=	$(SRC:.cpp=.o)
 
